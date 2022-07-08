@@ -8,6 +8,12 @@ const Header = () => {
         <span className={styles.title}>React Playground</span>
         <img className={styles.logo} src={logo} alt="logo" />
       </div>
+      <ul className={styles.menuList}>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Tab1</a></li>
+        <li><a href="/">Tab2</a></li>
+        <li><a href="/">Tab3</a></li>
+      </ul>
     </header>
   );
 };

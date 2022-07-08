@@ -4,7 +4,6 @@
   box-shadow: 0 0.25rem 0.75rem 0 rgb(104 116 136 / 13%);
   display: flex;
   align-items: center;
-  padding: 1rem;
 }
 
 @keyframes rotation {
@@ -29,6 +28,8 @@
 
 .titleContainer {
   display: flex;
+  flex: 1;
+  padding: 0 1rem;
 }
 
 .title {
@@ -36,4 +37,28 @@
   font-weight: bold;
   color: inherit;
   line-height: 1.75rem;
+}
+
+.menuList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.menuList a {
+  display: block;
+  padding: 1rem;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.menuList a:hover {
+  background-color: #f2f5f7;
+}
+
+.menuList a:active {
+  color: #0dbf6d;
 }
