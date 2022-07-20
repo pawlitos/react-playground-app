@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../logo.svg';
 import styles from './Header.module.css';
 
@@ -5,14 +6,22 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.titleContainer}>
-        <span className={styles.title}>React Playground</span>
         <img className={styles.logo} src={logo} alt="logo" />
+        <span className={styles.title}>React Playground</span>
       </div>
       <ul className={styles.menuList}>
-        <li><a href="/">Home</a></li>
-        <li><a href="/">Tab1</a></li>
-        <li><a href="/">Tab2</a></li>
-        <li><a href="/">Tab3</a></li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/tab1">Tab1</Link>
+        </li>
+        <li>
+          <Link to="/tab2">Tab2</Link>
+        </li>
+        <li>
+          <Link to="/tab3">Tab3</Link>
+        </li>
       </ul>
     </header>
   );
