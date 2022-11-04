@@ -63,5 +63,5 @@
 }
 
 .menuList a:active {
-  color: #0dbf6d;
+  color: var(--primary);
 }
