@@ -44,12 +44,13 @@
 
 .menuList {
   display: flex;
+  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.menuList a {
+.link {
   display: block;
   padding: 1rem;
   color: inherit;
@@ -58,10 +59,17 @@
   text-decoration: none;
 }
 
-.menuList a:hover {
+.link:hover {
   background-color: #f2f5f7;
 }
 
-.menuList a:active {
+.link:active {
   color: var(--primary);
+}
+
+.linkButton {
+  composes: link;
+  background: none;
+  border: none;
+  font-family: inherit;
 }

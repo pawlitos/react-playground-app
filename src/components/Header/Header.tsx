@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import logo from '../../logo.png';
+import { useAuth } from '../../modules/auth/hooks';
 import { Container } from '../Container';
 import styles from './Header.module.css';
 
 const Header = () => {
+  const { user, logout } = useAuth();
+
   return (
     <header className={styles.header}>
       <Container>
@@ -14,17 +17,32 @@ const Header = () => {
           </div>
           <ul className={styles.menuList}>
             <li>
-              <Link to="/">Home</Link>
+              <Link className={styles.link} to="/">
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/tab1">Tab1</Link>
+              <Link className={styles.link} to="/tab1">
+                Tab1
+              </Link>
             </li>
             <li>
-              <Link to="/tab2">Tab2</Link>
+              <Link className={styles.link} to="/tab2">
+                Tab2
+              </Link>
             </li>
             <li>
-              <Link to="/tab3">Tab3</Link>
+              <Link className={styles.link} to="/tab3">
+                Tab3
+              </Link>
             </li>
+            {user && (
+              <li>
+                <button className={styles.linkButton} onClick={logout}>
+                  Logout
+                </button>
+              </li>
+            )}
           </ul>
         </div>
       </Container>
