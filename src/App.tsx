@@ -1,4 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './modules/auth/contexts';
+import { Login } from './modules/auth/pages';
+import { ProtectedRoute } from './modules/shared/components';
 import { Home } from './pages/Home';
 import { Layout } from './pages/Layout';
 import { Tab1 } from './pages/Tab1';
@@ -8,12 +11,43 @@ import { Tab3 } from './pages/Tab3';
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="tab1" element={<Tab1 />} />
-          <Route path="tab2" element={<Tab2 />} />
-          <Route path="tab3" element={<Tab3 />} />
+      <AuthProvider>
+        <Routes>
+          <Route path="login" element={<Login />} />
+          <Route path="/" element={<Layout />}>
+            <Route
+              index
+              element={
+                <ProtectedRoute>
+                  <Home />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="tab1"
+              element={
+                <ProtectedRoute>
+                  <Tab1 />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="tab2"
+              element={
+                <ProtectedRoute>
+                  <Tab2 />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="tab3"
+              element={
+                <ProtectedRoute>
+                  <Tab3 />
+                </ProtectedRoute>
+              }
+            />
+          </Route>
           <Route
             path="*"
             element={
@@ -22,8 +56,8 @@ const App = () => {
               </main>
             }
           />
-        </Route>
-      </Routes>
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 };
