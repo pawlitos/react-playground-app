@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getAlbums } from '../../services/api/albums';
+import { getAlbums } from '../../../../services/api/albums';
+import Album from '../../components/Album';
 
 type AlbumType = {
   id: number;
@@ -21,18 +22,13 @@ const Tab1 = () => {
 
   return (
     <div>
-      <h1>Tab1</h1>
+      <h1>Albums</h1>
       <p>{loading ? 'Loading...' : null}</p>
       <div style={{ padding: '2rem', backgroundColor: 'white' }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-          {albums.map((album) => {
-            return (
-              <div style={{ border: '1px solid', width: '200px' }}>
-                <div>{album.title}</div>
-                <div>Created by: {album.userId}</div>
-              </div>
-            );
-          })}
+          {albums.map((album) => (
+            <Album title={album.title} userId={album.userId} />
+          ))}
         </div>
       </div>
     </div>

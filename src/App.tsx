@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Tab1 } from './modules/albums/pages';
 import { AuthProvider } from './modules/auth/contexts';
 import { Login } from './modules/auth/pages';
 import { ProtectedRoute } from './modules/shared/components';
 import { Home } from './pages/Home';
 import { Layout } from './pages/Layout';
-import { Tab1 } from './pages/Tab1';
 import { Tab2 } from './pages/Tab2';
 import { Tab3 } from './pages/Tab3';
 
