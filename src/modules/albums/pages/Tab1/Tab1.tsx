@@ -25,9 +25,17 @@ const Tab1 = () => {
       <h1>Albums</h1>
       <p>{loading ? 'Loading...' : null}</p>
       <div style={{ padding: '2rem', backgroundColor: 'white' }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '10px',
+            alignItems: 'flex-start',
+            justifyContent: 'space-between',
+          }}
+        >
           {albums.map((album) => (
-            <Album title={album.title} userId={album.userId} />
+            <Album key={album.id} id={album.id} title={album.title} userId={album.userId} />
           ))}
         </div>
       </div>
