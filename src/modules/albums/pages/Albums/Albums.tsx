@@ -9,7 +9,7 @@ type AlbumType = {
   userId: number;
 };
 
-const Tab1 = () => {
+const Albums = () => {
   const [loading, setLoading] = useState(false);
   const [albums, setAlbums] = useState<AlbumType[]>([]);
 
@@ -50,4 +50,4 @@ const Tab1 = () => {
   );
 };
 
-export default Tab1;
+export default Albums;

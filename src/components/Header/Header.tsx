@@ -22,8 +22,8 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link className={styles.link} to="/tab1">
-                Tab1
+              <Link className={styles.link} to="/albums">
+                Albums
               </Link>
             </li>
             <li>
