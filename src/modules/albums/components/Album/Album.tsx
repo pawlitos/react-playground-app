@@ -1,14 +1,52 @@
-type Props = {
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import ClipLoader from 'react-spinners/ClipLoader';
+import { getAlbumPhotos } from '../../../../services/api/albums';
+import { getUser } from '../../../../services/api/users';
+import { AlbumPhotoType, UserType } from '../../types';
+import styles from './Album.module.css';
+
+type AlbumProps = {
+  id: number;
   title: string;
   userId: number;
 };
 
-const Album = ({ title, userId }: Props) => {
+const Album = ({ id, title, userId }: AlbumProps) => {
+  const [user, setUser] = useState<UserType>({ name: '' });
+  const [albumMainPhoto, setAlbumMainPhoto] = useState<AlbumPhotoType | null>(null);
+  const [totalPhotos, setTotalPhotos] = useState(0);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    Promise.all([getAlbumPhotos(id), getUser(userId)])
+      .then((values) => {
+        setAlbumMainPhoto(values[0][0]);
+        setTotalPhotos(values[0].length);
+        setUser(values[1]);
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
+      });
+  }, [id, userId]);
+
   return (
-    <div style={{ border: '1px solid', width: '200px' }}>
-      <div>{title}</div>
-      <div>Created by: {userId}</div>
-    </div>
+    <Link to={`${id}`} className={styles.container}>
+      {loading && (
+        <div className={styles.loader}>
+          <ClipLoader color="#0dbf6d" />
+        </div>
+      )}
+      <img
+        className={styles.photo}
+        src={albumMainPhoto ? albumMainPhoto.thumbnailUrl : undefined}
+      />
+      <h3 className={styles.title}>{title}</h3>
+      <div>Created by: {user.name}</div>
+      <div>Total: {totalPhotos}</div>
+    </Link>
   );
 };
 
