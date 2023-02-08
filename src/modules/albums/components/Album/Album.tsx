@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ClipLoader from 'react-spinners/ClipLoader';
 import { getAlbumPhotos } from '../../../../services/api/albums';
 import { getUser } from '../../../../services/api/users';
+import { ActivityIndicator } from '../../../shared/components';
 import { AlbumPhotoType, UserType } from '../../types';
 import styles from './Album.module.css';
 
@@ -36,7 +36,7 @@ const Album = ({ id, title, userId }: AlbumProps) => {
     <Link to={`${id}`} className={styles.container}>
       {loading && (
         <div className={styles.loader}>
-          <ClipLoader color="#0dbf6d" />
+          <ActivityIndicator />
         </div>
       )}
       <img

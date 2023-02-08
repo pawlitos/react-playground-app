@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getAlbums } from '../../../../services/api/albums';
+import { ActivityIndicator } from '../../../shared/components';
 import Album from '../../components/Album';
 
 type AlbumType = {
@@ -20,18 +21,24 @@ const Tab1 = () => {
     });
   }, []);
 
+  const loader = (
+    <p style={{ textAlign: 'center', margin: '20rem 0' }}>
+      <ActivityIndicator />
+    </p>
+  );
+
   return (
     <div>
       <h1>Albums</h1>
-      <p>{loading ? 'Loading...' : null}</p>
-      <div style={{ padding: '2rem', backgroundColor: 'white' }}>
+      {loading ? loader : null}
+      <div style={{ padding: '0 2rem' }}>
         <div
           style={{
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '10px',
+            gap: '30px 10px',
             alignItems: 'flex-start',
-            justifyContent: 'space-between',
+            justifyContent: 'center',
           }}
         >
           {albums.map((album) => (
