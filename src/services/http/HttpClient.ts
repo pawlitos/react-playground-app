@@ -11,7 +11,7 @@ class HttpClient implements HttpInterface {
   constructor(url: string) {
     this.instance = axios.create({
       baseURL: url,
-      timeout: 1000,
+      timeout: 3000,
     });
   }
 
