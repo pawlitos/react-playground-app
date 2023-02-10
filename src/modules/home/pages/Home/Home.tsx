@@ -1,5 +1,5 @@
-import { useAuth } from '../../../auth/hooks';
-import { Button } from '../../../shared/components';
+import { useAuth } from 'modules/auth';
+import { Button } from 'modules/shared';
 
 const Home = () => {
   const { user } = useAuth();

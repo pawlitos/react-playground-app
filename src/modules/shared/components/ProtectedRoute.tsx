@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '../../auth/hooks';
+import { useAuth } from 'modules/auth';
 
 type Props = {
   children: JSX.Element;

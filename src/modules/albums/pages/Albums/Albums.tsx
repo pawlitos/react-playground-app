@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { getAlbums } from '../../../../services/api/albums';
-import { ActivityIndicator } from '../../../shared/components';
-import Album from '../../components/Album';
+import { Album } from 'modules/albums/components';
+import { ActivityIndicator } from 'modules/shared';
+import { getAlbums } from 'services/api/albums';
 
 type AlbumType = {
   id: number;

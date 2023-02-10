@@ -1,10 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Albums } from './modules/albums/pages';
-import { AuthProvider } from './modules/auth/contexts';
-import { Login } from './modules/auth/pages';
-import { Home } from './modules/home/pages';
-import { ProtectedRoute } from './modules/shared/components';
-import { Layout } from './modules/shared/pages';
+import { Albums } from 'modules/albums';
+import { AuthProvider, Login } from 'modules/auth';
+import { Home } from 'modules/home';
+import { Layout, ProtectedRoute } from 'modules/shared';
 
 const App = () => {
   return (

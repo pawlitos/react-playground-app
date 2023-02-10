@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Button } from '../../../shared/components';
-import { useAuth } from '../../hooks';
+import { useAuth } from 'modules/auth/hooks';
+import { Button } from 'modules/shared';
 import styles from './Login.module.css';
 
 const Login = () => {

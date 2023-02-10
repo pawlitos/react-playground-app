@@ -1,4 +1,4 @@
-import HttpClient from '../http/HttpClient';
+import HttpClient from 'services/http/HttpClient';
 
 const httpClient = new HttpClient('https://jsonplaceholder.typicode.com/');
 

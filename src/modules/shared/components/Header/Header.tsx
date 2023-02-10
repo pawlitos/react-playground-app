@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useAuth } from '../../../auth/hooks';
+import { useAuth } from 'modules/auth';
 import logo from '../../../../logo.png';
 import Container from '../Container';
 import styles from './Header.module.css';
