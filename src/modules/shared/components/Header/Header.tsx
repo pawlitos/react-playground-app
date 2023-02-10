@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import logo from '../../logo.png';
-import { useAuth } from '../../modules/auth/hooks';
-import { Container } from '../Container';
+import { useAuth } from '../../../auth/hooks';
+import logo from '../../../../logo.png';
+import Container from '../Container';
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -24,16 +24,6 @@ const Header = () => {
             <li>
               <Link className={styles.link} to="/albums">
                 Albums
-              </Link>
-            </li>
-            <li>
-              <Link className={styles.link} to="/tab2">
-                Tab2
-              </Link>
-            </li>
-            <li>
-              <Link className={styles.link} to="/tab3">
-                Tab3
               </Link>
             </li>
             {user && (

@@ -2,11 +2,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Albums } from './modules/albums/pages';
 import { AuthProvider } from './modules/auth/contexts';
 import { Login } from './modules/auth/pages';
+import { Home } from './modules/home/pages';
 import { ProtectedRoute } from './modules/shared/components';
-import { Home } from './pages/Home';
-import { Layout } from './pages/Layout';
-import { Tab2 } from './pages/Tab2';
-import { Tab3 } from './pages/Tab3';
+import { Layout } from './modules/shared/pages';
 
 const App = () => {
   return (
@@ -28,22 +26,6 @@ const App = () => {
               element={
                 <ProtectedRoute>
                   <Albums />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="tab2"
-              element={
-                <ProtectedRoute>
-                  <Tab2 />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="tab3"
-              element={
-                <ProtectedRoute>
-                  <Tab3 />
                 </ProtectedRoute>
               }
             />
