@@ -14,7 +14,7 @@ type AlbumProps = {
 
 const Album = ({ id, title, userId }: AlbumProps) => {
   const [user, setUser] = useState<UserType>({ name: '' });
-  const [albumMainPhoto, setAlbumMainPhoto] = useState<AlbumPhotoType | null>(null);
+  const [albumMainPhoto, setAlbumMainPhoto] = useState<AlbumPhotoType>();
   const [totalPhotos, setTotalPhotos] = useState(0);
   const [loading, setLoading] = useState(false);
 
@@ -39,13 +39,16 @@ const Album = ({ id, title, userId }: AlbumProps) => {
           <ActivityIndicator />
         </div>
       )}
-      <img
-        className={styles.photo}
-        src={albumMainPhoto ? albumMainPhoto.thumbnailUrl : undefined}
-      />
-      <h3 className={styles.title}>{title}</h3>
-      <div>Created by: {user.name}</div>
-      <div>Total: {totalPhotos}</div>
+      {albumMainPhoto?.thumbnailUrl ? (
+        <img className={styles.photo} src={albumMainPhoto.thumbnailUrl} />
+      ) : (
+        <div className={styles.photoPlaceholder} />
+      )}
+      <div className={styles.caption}>
+        <h3 className={styles.title}>{title}</h3>
+        <div className={styles.subtitle}>Created by: {user.name}</div>
+        <div className={styles.subtitle}>Total: {totalPhotos}</div>
+      </div>
     </Link>
   );
 };

@@ -9,6 +9,10 @@
   text-decoration: none;
 }
 
+.container:hover {
+  box-shadow: 0 0.25rem 0.75rem 0 rgb(104 116 136 / 43%);
+}
+
 .loader {
   position: absolute;
   top: 0;
@@ -23,10 +27,25 @@
 }
 
 .photo {
+  display: block;
+  border-radius: 6px;
   width: 100%;
+}
+
+.photoPlaceholder {
+  width: 100%;
+  padding-top: 100%;
+}
+
+.caption {
+  padding: 0 .5rem;
 }
 
 .title {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: .9rem;
 }

@@ -1,15 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Album } from 'modules/albums/components';
+import { AlbumType } from 'modules/albums/types';
 import { ActivityIndicator } from 'modules/shared';
 import { getAlbums } from 'services/api/albums';
 
-type AlbumType = {
-  id: number;
-  title: string;
-  userId: number;
-};
-
-const Albums = () => {
+const AlbumsPage = () => {
   const [loading, setLoading] = useState(false);
   const [albums, setAlbums] = useState<AlbumType[]>([]);
 
@@ -50,4 +45,4 @@ const Albums = () => {
   );
 };
 
-export default Albums;
+export default AlbumsPage;

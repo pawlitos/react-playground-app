@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Albums } from 'modules/albums';
+import { AlbumPage, AlbumsPage } from 'modules/albums';
 import { AuthProvider, Login } from 'modules/auth';
 import { Home } from 'modules/home';
 import { Layout, ProtectedRoute } from 'modules/shared';
@@ -23,7 +23,15 @@ const App = () => {
               path="albums"
               element={
                 <ProtectedRoute>
-                  <Albums />
+                  <AlbumsPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="albums/:albumId"
+              element={
+                <ProtectedRoute>
+                  <AlbumPage />
                 </ProtectedRoute>
               }
             />
