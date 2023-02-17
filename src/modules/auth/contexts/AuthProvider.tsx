@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSessionStorage } from 'modules/shared';
 import AuthContext from './AuthContext';
 
 type Props = {
@@ -7,7 +8,7 @@ type Props = {
 };
 
 const AuthProvider = ({ children }: Props) => {
-  const [user, setUser] = useState<string | null>(null);
+  const [user, setUser] = useSessionStorage('user', null);
   const navigate = useNavigate();
 
   const login = async (data: string) => {
