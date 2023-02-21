@@ -15,8 +15,8 @@ const Login = () => {
   return (
     <div className={styles.container}>
       <div>
-        <h1 className={styles.header}>Login</h1>
         <div className={styles.content}>
+          <h1 className={styles.header}>Login</h1>
           <div className={styles.parent}>
             <div className={styles.div1}>
               <label htmlFor="login">Login</label>
@@ -30,7 +30,7 @@ const Login = () => {
                 onChange={(event) => setUsername(event.target.value)}
               />
             </div>
-
+            
             <div className={styles.div3}>
               <label htmlFor="password">Password</label>
             </div>
