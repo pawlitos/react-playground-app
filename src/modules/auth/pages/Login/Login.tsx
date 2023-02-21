@@ -30,7 +30,6 @@ const Login = () => {
                 onChange={(event) => setUsername(event.target.value)}
               />
             </div>
-            
             <div className={styles.div3}>
               <label htmlFor="password">Password</label>
             </div>
