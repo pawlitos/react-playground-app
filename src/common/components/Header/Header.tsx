@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from 'modules/auth';
-import logo from '../../../../logo.png';
+import logo from 'assets/images/logo.png';
 import Container from '../Container';
 import styles from './Header.module.css';
 
