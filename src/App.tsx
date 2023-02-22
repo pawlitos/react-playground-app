@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ProtectedRoute } from 'common';
+import { Layout } from 'layouts';
 import { AlbumPage, AlbumsPage } from 'modules/albums';
 import { AuthProvider, Login } from 'modules/auth';
 import { Home } from 'modules/home';
-import { ProtectedRoute } from 'modules/shared';
-import { Layout } from 'layouts';
 
 const App = () => {
   return (

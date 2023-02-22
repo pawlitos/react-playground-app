@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ActivityIndicator } from 'common';
 import { AlbumPhotoType, UserType } from 'modules/albums/types';
-import { ActivityIndicator } from 'modules/shared';
 import { getAlbumPhotos } from 'services/api/albums';
 import { getUser } from 'services/api/users';
 import styles from './Album.module.css';

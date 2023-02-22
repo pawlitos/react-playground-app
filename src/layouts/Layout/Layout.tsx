@@ -1,5 +1,5 @@
-import { Container, Header } from 'modules/shared/components';
 import { Outlet } from 'react-router-dom';
+import { Container, Header } from 'common';
 
 const Layout = () => {
   return (

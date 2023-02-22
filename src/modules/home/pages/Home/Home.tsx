@@ -1,5 +1,5 @@
+import { Button } from 'common';
 import { useAuth } from 'modules/auth';
-import { Button } from 'modules/shared';
 
 const Home = () => {
   const { user } = useAuth();

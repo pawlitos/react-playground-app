@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
+import { ActivityIndicator } from 'common';
 import { Album } from 'modules/albums/components';
 import { AlbumType } from 'modules/albums/types';
-import { ActivityIndicator } from 'modules/shared';
 import { getAlbums } from 'services/api/albums';
 
 const AlbumsPage = () => {

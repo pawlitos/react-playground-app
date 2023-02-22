@@ -1,5 +1,5 @@
+import { ActivityPlaceholder } from 'common';
 import { AlbumPhotoType } from 'modules/albums/types';
-import { ActivityPlaceholder } from 'modules/shared';
 import styles from './Photos.module.css';
 
 type PhotosProps = {
