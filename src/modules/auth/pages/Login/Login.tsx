@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Button } from 'common';
-import { useAuth } from 'modules/auth/hooks';
+import { Button, TextInput } from 'common';
+import { Label, useAuth } from 'modules/auth';
 import styles from './Login.module.css';
 
 const Login = () => {
@@ -19,26 +19,24 @@ const Login = () => {
           <h1 className={styles.header}>Login</h1>
           <div className={styles.parent}>
             <div className={styles.div1}>
-              <label htmlFor="login">Login</label>
+              <Label htmlFor="login">Login</Label>
             </div>
             <div className={styles.div2}>
-              <input
+              <TextInput
                 id="login"
-                className={styles.inputField}
                 type="text"
-                value={username}
+                placeholder="Enter your login here"
                 onChange={(event) => setUsername(event.target.value)}
               />
             </div>
             <div className={styles.div3}>
-              <label htmlFor="password">Password</label>
+              <Label htmlFor="password">Password</Label>
             </div>
             <div className={styles.div4}>
-              <input
+              <TextInput
                 id="password"
-                className={styles.inputField}
                 type="password"
-                value={password}
+                placeholder="Enter your password here"
                 onChange={(event) => setPassword(event.target.value)}
               />
             </div>
