@@ -1,0 +1,16 @@
+.input {
+  color: inherit;
+  padding: 0.688rem 0.938rem;
+  width: 100%;
+  border: 1px solid #a8b3c3;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.input:focus-visible {
+  outline-color: var(--primary);
+}
+
+.input::placeholder {
+  font-style: italic;
+}
