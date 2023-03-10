@@ -1,3 +1,5 @@
+@value headerSize: 4.25rem;
+
 .header {
   /*background-color: #282c34;*/
   background-color: white;
@@ -6,7 +8,7 @@
 
 .headerContent {
   display: flex;
-  align-items: center;
+  height: headerSize;
 }
 
 @keyframes rotation {
@@ -31,11 +33,12 @@
 
 .titleContainer {
   display: flex;
+  align-items: center;
   flex: 1;
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   color: inherit;
   line-height: 1.75rem;
@@ -44,18 +47,22 @@
 
 .menuList {
   display: flex;
-  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+.linkContainer {
+  display: none;
+}
+
 .link {
   display: block;
-  padding: 1rem;
+  padding: 0 1rem;
   color: inherit;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 900;
+  line-height: headerSize;
   text-decoration: none;
 }
 
@@ -72,4 +79,36 @@
   background: none;
   border: none;
   font-family: inherit;
+}
+
+.linkButtonHamburger {
+  composes: linkButton;
+  padding: 0;
+  width: headerSize;
+}
+
+.hamburger {
+  display: block;
+  height: headerSize;
+  margin: auto;
+}
+
+@media (min-width: 526px) {
+  .linkContainer {
+    display: list-item;
+  }
+
+  .hamburgerContainer {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .link {
+    font-size: 1rem;
+  }
 }
