@@ -4,6 +4,7 @@
 :root {
   --primary: #0dbf6d;
   --primary-dark: #0a9857;
+  --default-font: #354052;
 }
 
 html {
@@ -13,11 +14,12 @@ html {
 body {
   height: 100%;
   margin: 0;
+  min-width: 360px;
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #eff3f6;
-  color: #354052;
+  color: var(--default-font);
 }
 
 code {
