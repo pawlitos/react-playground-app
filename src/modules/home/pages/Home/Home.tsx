@@ -1,4 +1,4 @@
-import { Button } from 'common';
+import { Button } from 'common/components';
 import { useAuth } from 'modules/auth';
 
 const Home = () => {

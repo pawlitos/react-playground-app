@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, TextInput } from 'common';
+import { Button, TextInput } from 'common/components';
 import { Label, useAuth } from 'modules/auth';
 import styles from './Login.module.css';
 

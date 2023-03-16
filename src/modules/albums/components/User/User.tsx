@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ActivityPlaceholder } from 'common';
+import { ActivityPlaceholder } from 'common/components';
 import { UserType } from 'modules/albums/types';
 import { getUser } from 'services/api/users';
 import styles from './User.module.css';

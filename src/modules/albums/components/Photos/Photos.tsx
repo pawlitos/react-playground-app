@@ -1,4 +1,4 @@
-import { ActivityPlaceholder } from 'common';
+import { ActivityPlaceholder } from 'common/components';
 import { AlbumPhotoType } from 'modules/albums/types';
 import styles from './Photos.module.css';
 

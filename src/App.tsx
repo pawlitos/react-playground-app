@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ProtectedRoute } from 'common';
-import { Layout } from 'layouts';
+import { ProtectedRoute } from 'common/components';
+import { DrawerProvider } from 'common/components/Drawer';
+import { Layout } from 'common/layouts';
 import { AlbumPage, AlbumsPage } from 'modules/albums';
 import { AuthProvider, Login } from 'modules/auth';
 import { Home } from 'modules/home';
-import { DrawerProvider } from 'common/components/Drawer';
 
 const App = () => {
   return (

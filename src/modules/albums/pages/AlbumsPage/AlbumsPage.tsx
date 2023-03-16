@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ActivityIndicator } from 'common';
+import { ActivityIndicator } from 'common/components';
 import { Album } from 'modules/albums/components';
 import { AlbumType } from 'modules/albums/types';
 import { getAlbums } from 'services/api/albums';

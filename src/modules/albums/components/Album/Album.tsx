@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ActivityIndicator } from 'common';
+import { ActivityIndicator } from 'common/components';
 import { AlbumPhotoType, UserType } from 'modules/albums/types';
 import { getAlbumPhotos } from 'services/api/albums';
 import { getUser } from 'services/api/users';

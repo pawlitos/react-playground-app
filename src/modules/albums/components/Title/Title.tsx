@@ -1,4 +1,4 @@
-import { ActivityPlaceholder } from 'common';
+import { ActivityPlaceholder } from 'common/components';
 import styles from './Title.module.css';
 
 type TitleProps = {
