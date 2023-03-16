@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useAuth } from 'modules/auth';
 import logo from 'assets/images/logo.png';
+import { useAuth } from 'modules/auth';
 import Container from '../Container';
 import styles from './Header.module.css';
 import { useDrawer } from '../Drawer';
