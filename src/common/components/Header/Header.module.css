@@ -1,9 +1,11 @@
 @value headerSize: 4.25rem;
 
 .header {
-  /*background-color: #282c34;*/
+  position: sticky;
+  top: 0;
   background-color: white;
   box-shadow: 0 0.25rem 0.75rem 0 rgb(104 116 136 / 13%);
+  z-index: 1;
 }
 
 .headerContent {
