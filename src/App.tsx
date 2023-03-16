@@ -4,48 +4,51 @@ import { Layout } from 'layouts';
 import { AlbumPage, AlbumsPage } from 'modules/albums';
 import { AuthProvider, Login } from 'modules/auth';
 import { Home } from 'modules/home';
+import { DrawerProvider } from 'common/components/Drawer';
 
 const App = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Routes>
-          <Route path="login" element={<Login />} />
-          <Route path="/" element={<Layout />}>
+        <DrawerProvider>
+          <Routes>
+            <Route path="login" element={<Login />} />
+            <Route path="/" element={<Layout />}>
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <Home />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="albums"
+                element={
+                  <ProtectedRoute>
+                    <AlbumsPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="albums/:albumId"
+                element={
+                  <ProtectedRoute>
+                    <AlbumPage />
+                  </ProtectedRoute>
+                }
+              />
+            </Route>
             <Route
-              index
+              path="*"
               element={
-                <ProtectedRoute>
-                  <Home />
-                </ProtectedRoute>
+                <main style={{ padding: '1rem' }}>
+                  <p>There's nothing here!</p>
+                </main>
               }
             />
-            <Route
-              path="albums"
-              element={
-                <ProtectedRoute>
-                  <AlbumsPage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="albums/:albumId"
-              element={
-                <ProtectedRoute>
-                  <AlbumPage />
-                </ProtectedRoute>
-              }
-            />
-          </Route>
-          <Route
-            path="*"
-            element={
-              <main style={{ padding: '1rem' }}>
-                <p>There's nothing here!</p>
-              </main>
-            }
-          />
-        </Routes>
+          </Routes>
+        </DrawerProvider>
       </AuthProvider>
     </BrowserRouter>
   );

@@ -3,9 +3,11 @@ import { useAuth } from 'modules/auth';
 import logo from 'assets/images/logo.png';
 import Container from '../Container';
 import styles from './Header.module.css';
+import { useDrawer } from '../Drawer';
 
 const Header = () => {
   const { user, logout } = useAuth();
+  const { open } = useDrawer();
 
   return (
     <header className={styles.header}>
@@ -27,7 +29,7 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.hamburgerContainer}>
-              <button className={styles.linkButtonHamburger}>
+              <button className={styles.linkButtonHamburger} onClick={open}>
                 <svg viewBox="0 0 100 78" width="22" height="22" className={styles.hamburger}>
                   <g color="var(--default-font)">
                     <rect width="100" height="18" rx="8" fill="currentcolor"></rect>
