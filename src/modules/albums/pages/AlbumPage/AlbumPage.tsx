@@ -1,7 +1,7 @@
-import { AlbumDetailsContainer, Photos, Title, User } from 'modules/albums/components';
-import { AlbumPhotoType, AlbumType } from 'modules/albums/types';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { AlbumDetailsContainer, BackLink, Photos, Title, User } from 'modules/albums/components';
+import { AlbumPhotoType, AlbumType } from 'modules/albums/types';
 import { getAlbum, getAlbumPhotos } from 'services/api/albums';
 
 const AlbumPage = () => {
@@ -32,13 +32,13 @@ const AlbumPage = () => {
 
   return (
     <div>
-      <h1>Album details</h1>
+      <Title title={album?.title} />
+      <User userId={album?.userId} />
+      <p>
+        <BackLink />
+      </p>
       <AlbumDetailsContainer>
-        <Title title={album?.title} />
-        <User userId={album?.userId} />
-      </AlbumDetailsContainer>
-      <h3>Photos</h3>
-      <AlbumDetailsContainer>
+        <h3 style={{ marginTop: 0 }}>Photos</h3>
         <Photos photos={photos} />
       </AlbumDetailsContainer>
     </div>
