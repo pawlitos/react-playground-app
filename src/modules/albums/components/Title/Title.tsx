@@ -7,7 +7,7 @@ type TitleProps = {
 
 const Title = ({ title }: TitleProps) => {
   if (title) {
-    return <h3 className={styles.header}>{title}</h3>;
+    return <h1 className={styles.header}>{title}</h1>;
   }
 
   return (
