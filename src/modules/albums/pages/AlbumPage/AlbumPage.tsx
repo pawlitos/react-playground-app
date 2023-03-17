@@ -32,11 +32,11 @@ const AlbumPage = () => {
 
   return (
     <div>
-      <Title title={album?.title} />
-      <User userId={album?.userId} />
       <p>
         <BackLink />
       </p>
+      <Title title={album?.title} />
+      <User userId={album?.userId} />
       <AlbumDetailsContainer>
         <h3 style={{ marginTop: 0 }}>Photos</h3>
         <Photos photos={photos} />

@@ -1,4 +1,10 @@
-.titlePlaceholderContainer {
-  max-width: 500px;
+.user {
+  font-size: 0.875rem;
+  margin: 0 0 2rem;
+}
+
+.userPlaceholderContainer {
   height: 1rem;
+  margin: 0 0 2rem;
+  max-width: 500px;
 }

@@ -20,11 +20,11 @@ const User = ({ userId }: UserProps) => {
   }, [userId]);
 
   if (user.name) {
-    return <div>Created by {user.name}</div>;
+    return <div className={styles.user}>by {user.name}</div>;
   }
 
   return (
-    <div className={styles.titlePlaceholderContainer}>
+    <div className={styles.userPlaceholderContainer}>
       <ActivityPlaceholder />
     </div>
   );
