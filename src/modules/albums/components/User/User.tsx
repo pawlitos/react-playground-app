@@ -20,7 +20,7 @@ const User = ({ userId }: UserProps) => {
   }, [userId]);
 
   if (user.name) {
-    return <div>Album created by {user.name}</div>;
+    return <div>Created by {user.name}</div>;
   }
 
   return (
