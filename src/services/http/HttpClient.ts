@@ -28,18 +28,14 @@ class HttpClient implements HttpInterface {
     // );
   }
 
-  get(url: string) {
-    return this.instance
-      .get(url)
-      .then((res) => res.data)
-      .catch((error) => error);
+  async get(url: string) {
+    const res = await this.instance.get(url);
+    return res.data;
   }
 
-  post(url: string, data: any) {
-    return this.instance
-      .post(url, data)
-      .then((res) => res.data)
-      .catch((error) => error);
+  async post(url: string, data: any) {
+    const res = await this.instance.post(url, data);
+    return res.data;
   }
 }
 
