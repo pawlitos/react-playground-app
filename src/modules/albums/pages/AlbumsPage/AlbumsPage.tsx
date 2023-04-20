@@ -26,20 +26,18 @@ const AlbumsPage = () => {
     <div>
       <h1>Albums</h1>
       {loading ? loader : null}
-      <div style={{ padding: '0 2rem' }}>
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '30px 10px',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-          }}
-        >
-          {albums.map((album) => (
-            <Album key={album.id} id={album.id} title={album.title} userId={album.userId} />
-          ))}
-        </div>
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '30px 10px',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+        }}
+      >
+        {albums.map((album) => (
+          <Album key={album.id} id={album.id} title={album.title} userId={album.userId} />
+        ))}
       </div>
     </div>
   );
