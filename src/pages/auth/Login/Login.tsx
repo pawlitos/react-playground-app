@@ -18,10 +18,10 @@ const Login = () => {
         <div className={styles.content}>
           <h1 className={styles.header}>Login</h1>
           <div className={styles.parent}>
-            <div className={styles.div1}>
+            <div>
               <Label htmlFor="login">Login</Label>
             </div>
-            <div className={styles.div2}>
+            <div>
               <TextInput
                 id="login"
                 type="text"
@@ -29,10 +29,10 @@ const Login = () => {
                 onChange={(event) => setUsername(event.target.value)}
               />
             </div>
-            <div className={styles.div3}>
+            <div>
               <Label htmlFor="password">Password</Label>
             </div>
-            <div className={styles.div4}>
+            <div>
               <TextInput
                 id="password"
                 type="password"
