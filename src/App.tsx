@@ -5,7 +5,7 @@ import { AuthProvider } from 'modules/auth';
 import { AlbumDetails, AlbumsOutlet, AlbumsSummary } from 'pages/albums';
 import { Login } from 'pages/auth';
 import { Home } from 'pages/home';
-import { UsersPage } from 'pages/users';
+import { AddUserPage, UsersOutlet, UsersPage } from 'pages/users';
 
 const App = () => {
   return (
@@ -26,7 +26,10 @@ const App = () => {
               <Route index element={<AlbumsSummary />} />
               <Route path=":albumId" element={<AlbumDetails />} />
             </Route>
-            <Route path="users" element={<UsersPage />} />
+            <Route path="users" element={<UsersOutlet />}>
+              <Route index element={<UsersPage />} />
+              <Route path="create" element={<AddUserPage />} />
+            </Route>
           </Route>
           <Route
             path="*"
