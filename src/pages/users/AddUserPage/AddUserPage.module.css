@@ -1,0 +1,13 @@
+.heading {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  flex: 1;
+}
+
+.buttonContainer {
+  font-size: initial;
+  font-weight: initial;
+}

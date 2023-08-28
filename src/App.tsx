@@ -2,10 +2,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ProtectedRoute } from 'common/components';
 import { Layout } from 'common/layouts';
 import { AuthProvider } from 'modules/auth';
-import { AlbumPage, AlbumsPage } from 'pages/albums';
+import { AlbumPage, Albums, AlbumsPage } from 'pages/albums';
 import { Login } from 'pages/auth';
 import { Home } from 'pages/home';
-import UsersPage from 'pages/users/UsersPage/UsersPage';
+import { UsersPage } from 'pages/users';
 
 const App = () => {
   return (
@@ -13,39 +13,20 @@ const App = () => {
       <AuthProvider>
         <Routes>
           <Route path="login" element={<Login />} />
-          <Route path="/" element={<Layout />}>
-            <Route
-              index
-              element={
-                <ProtectedRoute>
-                  <Home />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="albums"
-              element={
-                <ProtectedRoute>
-                  <AlbumsPage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="albums/:albumId"
-              element={
-                <ProtectedRoute>
-                  <AlbumPage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="users"
-              element={
-                <ProtectedRoute>
-                  <UsersPage />
-                </ProtectedRoute>
-              }
-            />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Layout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<Home />} />
+            <Route path="albums" element={<Albums />}>
+              <Route index element={<AlbumsPage />} />
+              <Route path=":albumId" element={<AlbumPage />} />
+            </Route>
+            <Route path="users" element={<UsersPage />} />
           </Route>
           <Route
             path="*"
