@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ProtectedRoute } from 'common/components';
 import { Layout } from 'common/layouts';
 import { AuthProvider } from 'modules/auth';
-import { AlbumDetails, Albums, AlbumsPage } from 'pages/albums';
+import { AlbumDetails, AlbumsOutlet, AlbumsSummary } from 'pages/albums';
 import { Login } from 'pages/auth';
 import { Home } from 'pages/home';
 import { UsersPage } from 'pages/users';
@@ -22,8 +22,8 @@ const App = () => {
             }
           >
             <Route index element={<Home />} />
-            <Route path="albums" element={<Albums />}>
-              <Route index element={<AlbumsPage />} />
+            <Route path="albums" element={<AlbumsOutlet />}>
+              <Route index element={<AlbumsSummary />} />
               <Route path=":albumId" element={<AlbumDetails />} />
             </Route>
             <Route path="users" element={<UsersPage />} />

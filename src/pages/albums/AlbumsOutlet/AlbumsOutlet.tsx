@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
-const Albums = () => {
+const AlbumsOutlet = () => {
   return <Outlet />;
 };
 
-export default Albums;
+export default AlbumsOutlet;

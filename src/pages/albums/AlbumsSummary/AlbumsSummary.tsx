@@ -4,7 +4,7 @@ import { Album } from 'modules/albums/components';
 import { AlbumType } from 'modules/albums/types';
 import { getAlbums } from 'services/api/albums';
 
-const AlbumsPage = () => {
+const AlbumsSummary = () => {
   const [loading, setLoading] = useState(false);
   const [albums, setAlbums] = useState<AlbumType[]>([]);
 
@@ -43,4 +43,4 @@ const AlbumsPage = () => {
   );
 };
 
-export default AlbumsPage;
+export default AlbumsSummary;
