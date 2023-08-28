@@ -1,0 +1,23 @@
+.thead {
+  text-align: left;
+}
+
+.cell {
+  border-bottom: 1px solid #dddddd;
+  padding: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0;
+}
+
+.cellId {
+  composes: cell;
+  width: 5%;
+  max-width: initial;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}

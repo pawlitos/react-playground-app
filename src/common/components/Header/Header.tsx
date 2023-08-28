@@ -28,6 +28,11 @@ const Header = () => {
                 Albums
               </Link>
             </li>
+            <li className={styles.linkContainer}>
+              <Link className={styles.link} to="/users">
+                Users
+              </Link>
+            </li>
             <li className={styles.hamburgerContainer}>
               <button className={styles.linkButtonHamburger} onClick={open}>
                 <svg viewBox="0 0 100 78" width="22" height="22" className={styles.hamburger}>

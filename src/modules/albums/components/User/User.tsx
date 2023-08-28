@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ActivityPlaceholder } from 'common/components';
-import { UserType } from 'modules/albums/types';
+import { UserType } from 'modules/users/types';
 import { getUser } from 'services/api/users';
 import styles from './User.module.css';
 
@@ -9,7 +9,7 @@ type UserProps = {
 };
 
 const User = ({ userId }: UserProps) => {
-  const [user, setUser] = useState<UserType>({ name: '' });
+  const [user, setUser] = useState<UserType>();
 
   useEffect(() => {
     if (userId) {
@@ -19,7 +19,7 @@ const User = ({ userId }: UserProps) => {
     }
   }, [userId]);
 
-  if (user.name) {
+  if (user) {
     return <div className={styles.user}>by {user.name}</div>;
   }
 

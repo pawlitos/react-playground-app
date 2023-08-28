@@ -5,6 +5,7 @@ import { AuthProvider } from 'modules/auth';
 import { AlbumPage, AlbumsPage } from 'pages/albums';
 import { Login } from 'pages/auth';
 import { Home } from 'pages/home';
+import UsersPage from 'pages/users/UsersPage/UsersPage';
 
 const App = () => {
   return (
@@ -34,6 +35,14 @@ const App = () => {
               element={
                 <ProtectedRoute>
                   <AlbumPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="users"
+              element={
+                <ProtectedRoute>
+                  <UsersPage />
                 </ProtectedRoute>
               }
             />

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ActivityIndicator } from 'common/components';
-import { AlbumPhotoType, UserType } from 'modules/albums/types';
+import { AlbumPhotoType } from 'modules/albums/types';
+import { UserType } from 'modules/users/types';
 import { getAlbumPhotos } from 'services/api/albums';
 import { getUser } from 'services/api/users';
 import styles from './Album.module.css';
@@ -13,7 +14,7 @@ type AlbumProps = {
 };
 
 const Album = ({ id, title, userId }: AlbumProps) => {
-  const [user, setUser] = useState<UserType>({ name: '' });
+  const [user, setUser] = useState<UserType>();
   const [albumMainPhoto, setAlbumMainPhoto] = useState<AlbumPhotoType>();
   const [totalPhotos, setTotalPhotos] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -46,7 +47,7 @@ const Album = ({ id, title, userId }: AlbumProps) => {
       )}
       <div className={styles.caption}>
         <h3 className={styles.title}>{title}</h3>
-        <div className={styles.subtitle}>Created by: {user.name}</div>
+        <div className={styles.subtitle}>Created by: {user?.name}</div>
         <div className={styles.subtitle}>Total: {totalPhotos}</div>
       </div>
     </Link>

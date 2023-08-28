@@ -11,7 +11,3 @@ export type AlbumPhotoType = {
   title: string;
   url: string;
 };
-
-export type UserType = {
-  name: string;
-};
