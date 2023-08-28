@@ -4,7 +4,7 @@ import { AlbumDetailsContainer, Photos, Title, User } from 'modules/albums/compo
 import { AlbumPhotoType, AlbumType } from 'modules/albums/types';
 import { getAlbum, getAlbumPhotos } from 'services/api/albums';
 
-const AlbumPage = () => {
+const AlbumDetails = () => {
   const navigate = useNavigate();
   const { albumId } = useParams();
   const [album, setAlbum] = useState<AlbumType>();
@@ -42,4 +42,4 @@ const AlbumPage = () => {
   );
 };
 
-export default AlbumPage;
+export default AlbumDetails;
