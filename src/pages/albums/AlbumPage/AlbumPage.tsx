@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { AlbumDetailsContainer, BackLink, Photos, Title, User } from 'modules/albums/components';
+import { AlbumDetailsContainer, Photos, Title, User } from 'modules/albums/components';
 import { AlbumPhotoType, AlbumType } from 'modules/albums/types';
 import { getAlbum, getAlbumPhotos } from 'services/api/albums';
 
@@ -32,9 +32,6 @@ const AlbumPage = () => {
 
   return (
     <div>
-      <p>
-        <BackLink />
-      </p>
       <Title title={album?.title} />
       <User userId={album?.userId} />
       <AlbumDetailsContainer>

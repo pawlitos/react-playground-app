@@ -1,5 +1,6 @@
 import { ActivityPlaceholder } from 'common/components';
 import styles from './Title.module.css';
+import BackLink from '../BackLink/BackLink';
 
 type TitleProps = {
   title: string | undefined;
@@ -7,7 +8,13 @@ type TitleProps = {
 
 const Title = ({ title }: TitleProps) => {
   if (title) {
-    return <h1 className={styles.header}>{title}</h1>;
+    return (
+      <h2 className={styles.header}>
+        <BackLink>Albums</BackLink>
+        {' / '}
+        {title}
+      </h2>
+    );
   }
 
   return (
