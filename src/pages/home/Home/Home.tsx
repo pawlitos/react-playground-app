@@ -7,8 +7,7 @@ const Home = () => {
   return (
     <div>
       <h1>Hello {user}</h1>
-      <Button>Full</Button> <Button variant="outlined">Outlined</Button>{' '}
-      <Button variant="link">Link</Button>
+      <Button>Full</Button> <Button variant="link">Link</Button>
     </div>
   );
 };
